@@ -5,4 +5,5 @@ authors = ["Walter Sharp"]
 
 [dependencies]
 rocket = "0.3.16"
+rocket_codegen = "0.3.16"
 reqwest = "0.9.1"
