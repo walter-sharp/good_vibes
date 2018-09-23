@@ -5,7 +5,7 @@ use reqwest;
  * username: The username used to authenticate with the satellite server
  * password: The password used to authenticate with the satellite server
  */
-fn initialiseGoodVibes(username: String, password: String)
+pub fn initialiseGoodVibes(username: String, password: String)
 {
 	let client = Client::new();
 	let credentials = header::Basic { username: username, password: password };

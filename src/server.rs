@@ -3,29 +3,33 @@
 
 extern crate rocket;
 
-mod ./services/make_satellite;
+use services;
 
-let Username: String = "";
-let Password: String = "";
+struct Auth
+{
+	pub Username: String,
+	pub Password: String,
+}
+
+static mut Credentials: Auth = Auth();
 
 /**Will attempt to start the good vibes by communicating with 
  * the make satellite. If successful will post a message to slack
  * informing makers that good vibes are on the way
  */
-#[post("initialiseGoodVibes")]
+#[post("/")]
 fn initialiseGoodVibes()
 {
-	make_satellite::initialiseGoodVibes(Username, Password);
+	make_satellite::initialiseGoodVibes(Credentials.Username, Credentials.Password);
 }
 
 /**Starts the HTTP server that will
  * begin listening for requests from the Alexa Skill
  */
-fn startServer(username: String, password: String)
+pub fn startServer(username: String, password: String)
 {
-	Username = username;
-	Password = password;
-
+	Credentials = Auth { username, password  };
+	
 	//fire up the rocket HTTP server
-	rocket::ignite().mount("/", routes![initialiseGoodVibes]).launch();;
+	rocket::ignite().mount("/api", routes![initialiseGoodVibes]).launch();
 }
