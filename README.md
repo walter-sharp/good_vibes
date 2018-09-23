@@ -7,7 +7,7 @@ Getting this application up and running requires several steps:
  - [Downloading and installing ngrok](#1-downloading-and-installing-ngrok)
  - [Building and running the application](#2-building-and-running-the-application)
  - [Setting up the Alexa Skill](#3-setting-up-the-alexa-skill)
- - [Invoking the Alexa Skill](#3-invoking-the-alexa-skill)
+ - [Invoking the Alexa Skill](#4-invoking-the-alexa-skill)
  
 ## 1. Downloading and installing ngrok
 
