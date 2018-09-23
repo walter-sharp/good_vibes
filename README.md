@@ -7,6 +7,7 @@ Getting this application up and running requires several steps:
  - [Downloading and installing ngrok](#1-downloading-and-installing-ngrok)
  - [Building and running the application](#2-building-and-running-the-application)
  - [Setting up the Alexa Skill](#3-setting-up-the-alexa-skill)
+ - [Invoking the Alexa Skill](#3-invoking-the-alexa-skill)
  
 ## 1. Downloading and installing ngrok
 
@@ -73,3 +74,22 @@ Forwarding                    https://d8sjf7sd.ngrok.io -> localhost:8000
 7. Each time you change an Alexa skill, it will need to be rebuilt before being used again. To rebuild the skill, click the 'Invocation' item in the left hand sidebar then click the 'Build Model' button situated in the top left hand corner to begin the build process.
 > The build process is actually queued and will not be completed immediately. After a few seconds a notification will popup telling you that the build is complete.
 
+## 4. Invoking the Alexa Skill
+
+Now that the skill is setup to use our exposed endpoint when invoked, we can go ahead and actually invoke the skill.
+
+1. Click on the 'Test' tab to navigate to the skills test page.
+
+2. Type in any one of the following commands to invoke the skill:
+
+> fire good vibes at makers
+
+> go for good vibes
+
+> fire good vibes cannon
+
+> initiate good vibes sender
+
+> send good vibes
+
+3. If the skill is invoked successfully, it should send a request to your local web server.
