@@ -30,4 +30,4 @@ cargo build
 ```
 cargo run username password
 ```
-
+In order to communicate with the Make Satellite HTTP server, this application requires the username and password used to authenticate with the service. You provide these credentials as command line arguments when executing the application.
