@@ -20,14 +20,14 @@ ngrok http 8000
 This application uses the [Rocket library](https://rocket.rs/) to create an HTTP server in order to listen to incoming requests. Rocket defaults to using port 8000 (hence the use of port 8000 in the above command).
 
 If the command executes successfully, ngrok should print the address used to access your local server as well as other information:
-
- > Session Expires               7 hours, 56 minutes
- > Version                       2.2.8
- > Region                        United States (us)
- > Web Interface                 http://127.0.0.1:4040
- > Forwarding                    http://acb61f8a.ngrok.io -> localhost:8000
- > Forwarding                    https://acb61f8a.ngrok.io -> localhost:8000
-
+```
+Session Expires               7 hours, 56 minutes
+Version                       2.2.8
+Region                        United States (us)
+Web Interface                 http://127.0.0.1:4040
+Forwarding                    http://your-address.ngrok.io -> localhost:8000
+Forwarding                    https://your-address.ngrok.io -> localhost:8000
+```
 ## 2. Building and running the application
 
 1. To actually build the application, grab and install the Rust build tools for your operating system [here](https://www.rust-lang.org/en-US/install.html).
