@@ -6,6 +6,7 @@ Getting this application up and running requires several steps:
 
  - [Downloading and installing ngrok](#1-downloading-and-installing-ngrok)
  - [Building and running the application](#2-building-and-running-the-application)
+ - [Setting up the Alexa Skill](#3-setting-up-the-alexa-skill)
  
 ## 1. Downloading and installing ngrok
 
@@ -48,5 +49,27 @@ cargo run username password
 ```
 In order to communicate with the Make Satellite HTTP server, this application requires the username and password used to authenticate with the service. You provide these credentials as command line arguments when executing the application. Note that the order these arguments appear is important, the username must come before the password.
 
-## 3. Setting up and invoking the Alexa Skill
+## 3. Setting up the Alexa Skill
+
+The good vibes application is meant to be invoked by issuing a voice command through an Alexa Skill. For our purposes though, we can just use the test system on the Amazon developer console to invoke the skill manually. Before we can invoke the skill though, we need to tell Alexa where to send the request once the skill is invoked.
+
+1. Browse to the Amazon developer console [here](https://developer.amazon.com/alexa) and sign in using the OfferZen Make credentials.
+
+2. Once logged in, you should be redirected to the Alexa Skills Kit Console. Click the 'good vibes sender' skill in the skills list.
+
+3. On the left hand sidebar, click on the 'Endpoint' item to go to the skill endpoint configuration page.
+
+4. If the 'HTTPS' option is not already selected, go ahead and select it, additional fields will appear allowing you to enter the address Alexa will send the request to once the skill is invoked.
+
+5. In the 'Default Region' field, enter in the HTTPS address that ngrok provided for you when you started up the ngrok service. It should look similar to the following:
+```
+Forwarding                    https://d8sjf7sd.ngrok.io -> localhost:8000
+```
+
+> Note that your address will likely be different from the example address above.
+
+6. Click the 'Save Endpoints' button in the top left to save the endpoints for the skill.
+
+7. Each time you change an Alexa skill, it will need to be rebuilt before being used again. To rebuild the skill, click the 'Invocation' item in the left hand sidebar then click the 'Build Model' button situated in the top left hand corner to begin the build process.
+> The build process is actually queued and will not be completed immediately. After a few seconds a notification will popup telling you that the build is complete.
 
