@@ -92,4 +92,4 @@ Now that the skill is setup to use our exposed endpoint when invoked, we can go 
 
 > send good vibes
 
-3. If the skill is invoked successfully, it should send a request to your local web server.
+If the skill is invoked successfully, it should send a request to your local web server, this should in turn activate the satellite using the credentials you provided when running the app. If all goes well, a mesage should appear in the #satellite-alpha channel on Slack informing the Makers that good vibes are on the way.
