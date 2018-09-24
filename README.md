@@ -2,6 +2,16 @@
 
 A Simple command line application written in [Rust](https://www.rust-lang.org) that creates an HTTP server to listen for incoming Alexa Skill requests for toggling the Maker Satellite good vibes beam and communicating with the Makers via Slack once activated.
 
+### Design Considerations
+
+Designing the user experience for the application is done through two user perspectives: the perspective of the users enabling the satellite (the OfferZen staff) and the perspective of the users that will be at the receiving end of the beam (the Makers). 
+
+For the OfferZen staff, the means of initiating the satellite is done through voice commands to the Amazon Alexa. When creating voice commands (for any device), it's important to keep in mind that they should be both easy to say as well as easy to remember. It also goes without saying, these voice commands should make sense and convey what the the user is trying to achieve when using them. To this end, the voice commands chosen to initiate the satellite are short and to the point and relate directly to the act of starting up the satellite.
+
+For the Makers, their experience of the application (apart from the vibes) is through the Slack messages received once the satellite has been successfully activated. The primary idea is to increase the morale of the makers in the Make Space. To assist with this, the message sent to the Slack channel should be upbeat and positive, with a few emoticons thrown in to show off the casual nature of the Make Space, making sure the application doesn't come across as too serious while informing them that good vibes are on their way.
+
+### Installing the application
+
 Getting this application up and running requires several steps:
 
  - [Downloading and installing ngrok](#1-downloading-and-installing-ngrok)
